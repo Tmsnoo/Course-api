@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.javabrains.springbootstarter.entity.Topic;
+import io.javabrains.springbootstarter.events.Sub;
+import io.javabrains.springbootstarter.events.SubscriptionPublisher;
 import io.javabrains.springbootstarter.repository.TopicsRepository;
 
 @RestController
@@ -16,6 +18,12 @@ public class TopicController {
 	
 	@Autowired
 	TopicsRepository topicsRepo;
+	
+	@Autowired
+	SubscriptionPublisher subscriptionPublisher; 
+	
+	@Autowired
+	Sub sub;
 
 	@RequestMapping("/topics")
 	public List<Topic> getAllTopics() {
@@ -32,6 +40,7 @@ public class TopicController {
 		topics.setDescription("none");
 		topics.setName("Title");
 		topicsRepo.saveAndFlush(topics);
+		subscriptionPublisher.emit(sub);
 		return Arrays.asList(topics);
 	}
 	

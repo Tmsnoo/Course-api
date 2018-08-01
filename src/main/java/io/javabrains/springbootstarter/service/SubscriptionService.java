@@ -1,5 +1,9 @@
 package io.javabrains.springbootstarter.service;
 
-public class SubscriptionService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class SubscriptionService {
+	
+	
 }
