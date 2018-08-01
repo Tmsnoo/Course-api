@@ -1,6 +1,4 @@
-io/javabrains/springbootstarter/hello/HelloController.class
 io/javabrains/springbootstarter/repository/TopicsRepository.class
 io/javabrains/springbootstarter/CourseApiApp.class
-io/javabrains/springbootstarter/topic/TopicController.class
-io/javabrains/springbootstarter/topic/Topic.class
-io/javabrains/springbootstarter/entity/Topics.class
+io/javabrains/springbootstarter/entity/Topic_.class
+io/javabrains/springbootstarter/hello/HelloController.class

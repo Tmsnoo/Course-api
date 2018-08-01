@@ -2,6 +2,9 @@ package io.javabrains.springbootstarter.events;
 
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Sub {
 
 	UUID eventId = UUID.randomUUID();
@@ -9,6 +12,13 @@ public class Sub {
 	Long subscriberId;
 
 	public Sub(UUID eventId, String topicId, Long subscriberId) {
+		super();
+		this.eventId = eventId;
+		this.topicId = topicId;
+		this.subscriberId = subscriberId;
+	}
+
+	public Sub() {
 		super();
 		this.eventId = eventId;
 		this.topicId = topicId;
